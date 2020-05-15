@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>My LIFF app</title>
+  <link rel="stylesheet" href="css/style.css" media="all">
+ <!-- <script>
+    document.write('<link rel="stylesheet" href="css/style.css?cache=' + new Date().getTime() +'">')
+  </script>-->
+</head>
+<body>
+  <!--<button id="btnMsg" onclick="sendMsg()">ส่ง..</button>  -->
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script>
+   function closed() {
+      liff.closeWindow()
+    }
+
+    async function sendMsg() {
+     // alert("Message sent") 
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([
+      // start flex
+        {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://static.wixstatic.com/media/e5c721_eadd01ef8cdc4a859e24147b49a0b3d3~mv2.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "เค้กส้มหน้านิ่ม",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿250",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "1ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿480",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "2ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿650",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "3ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "ตกแต่งหน้าเค้กด้วยผลไม้สดตามฤดูกาล",
+              "size": "xs",
+              "align": "center",
+              "color": "#AAAAAA",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://static.wixstatic.com/media/e5c721_e76da64e7f2e48cea0e95e4acf0d99a1~mv2.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "เค้กช็อกโกแลตหน้านิ่ม",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿250",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "1ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿480",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "2ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿650",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "3ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "ตกแต่งด้วยขนมเวฟเฟิลหรือผลไม้ตามฤดูกาล รายละเอียดการออกแบบระบุตอนทำการสั่งค่ะ",
+              "size": "xs",
+              "align": "center",
+              "color": "#AAAAAA",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://static.wixstatic.com/media/e5c721_b9ebc7d1264b4a7f951265f8ddad9c84~mv2.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "เค้กมะพร้าวอ่อน",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿250",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "1ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿480",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "2ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿650",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "3ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "เค้กชิฟฟ่อนมะพร้าวอ่อน ที่อร่อย นุ่ม หอม นวล ฉ่ำ ตัวซอสมะพร้าว มีทั้งน้ำมะพร้าว กะทิ น้ำตาลมะพร้าว ในเค้กก็ใส่น้ำมันมะพร้าว น้ำมะพร้าว ทอปปิ้งหน้าด้วยเนื้อมะพร้าวอ่อน เต็มปากเต็มคำ",
+              "size": "xs",
+              "align": "center",
+              "color": "#AAAAAA",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://static.wixstatic.com/media/e5c721_0d5ca7de3aa44e32bccd12e6b9399a3d~mv2.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "ชีสเค้กญี่ปุ่นแต่งครีม",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿350",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "1ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿600",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "2ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "แต่งเค้กด้วยครีมสด และตกแต่งด้วยผลไม้สด หรือขนมเวเฟิล รายละเอียดการออกแบบระบุตอนทำการสั่งค่ะ",
+              "size": "xs",
+              "color": "#AAAAAA",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://static.wixstatic.com/media/e5c721_f7c1626823db4bf0adf9f2192c016146~mv2.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "เค้กตัวเลขหรือตัวอักษร",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿500",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "1ตัว",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿850",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "2ตัว",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "เลือกเนื้อเค้ก",
+                      "size": "xs",
+                      "align": "center",
+                      "color": "#AAAAAA",
+                      "wrap": true
+                    },
+                    {
+                      "type": "text",
+                      "text": "RED VELVET",
+                      "size": "xs",
+                      "align": "center",
+                      "color": "#AAAAAA"
+                    },
+                    {
+                      "type": "text",
+                      "text": "เค้กช๊อกโกแลต",
+                      "size": "xs",
+                      "align": "center",
+                      "color": "#AAAAAA"
+                    },
+                    {
+                      "type": "text",
+                      "text": "เค้กส้ม  เค้กนมสด",
+                      "size": "xs",
+                      "align": "center",
+                      "color": "#AAAAAA"
+                    },
+                    {
+                      "type": "text",
+                      "text": "บราวนี่",
+                      "size": "xs",
+                      "align": "center",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "แต่งด้วยครีมสด ผลไม้สดตามฤดูกาล หรือขนมเวเฟิล รายละเอียดการออกแบบระบุตอนทำการสั่งค่ะ",
+                      "margin": "sm",
+                      "size": "xs",
+                      "align": "center",
+                      "color": "#AAAAAA",
+                      "wrap": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://static.wixstatic.com/media/e5c721_bdc26bfb5e0e463b883f2665ed1d271c~mv2.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Red Velvet Cake",
+              "size": "lg",
+              "align": "center",
+              "weight": "bold"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿280",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "1ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿580",
+                      "flex": 0,
+                      "margin": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "2ปอนด์",
+                      "size": "sm",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "฿750",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "3ปอนด์",
+                      "size": "md",
+                      "align": "end",
+                      "color": "#AAAAAA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "เค้กเนื้อสีแดง นุ่ม ชุ่มฉ่ำ อย่างที่ใครๆเรียกว่า เค้กกำมะหยี่ ด้านบนเป็นครีมชีสฟรอสติ่ง รสหวานอมเปรี้ยว เข้ากันได้อย่างลงตัว เหมาะสำหรับคนที่ไม่ชอบครีมเนยแบบเค้กทั่วไป",
+              "size": "xs",
+              "align": "center",
+              "color": "#AAAAAA",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://gwangraindear.github.io/LiffMenu2/img/space,jpg",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "fit"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "ดูผลงาน",
+                "uri": "http://shorturl.at/DJKMO"
+              },
+              "color": "#3DC79D",
+              "style": "primary"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+      // end flex
+        ])
+        
+       closed() 
+      }
+    }
+
+    async function main() {
+      await liff.init({ liffId: "1654167548-O69jrWmq" })
+      //alert("main") 
+        if (liff.isLoggedIn()) {
+         // getContext()
+         // alert("is log in")
+          setTimeout(sendMsg(),1000)
+          
+        } else {
+          liff.login()
+        }
+      
+    }
+    main()
+  </script>
+</body>
+</html>
